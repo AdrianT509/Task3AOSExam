@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Rolsa Technologies</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 25px;
+  padding: 0px 100px;
+  overflow: hidden;
+  background-color: #DF7D7C;
+  background-image: linear-gradient(to right, #44BD48 , #A1E065);
+  posiiton: fixed;
+  top: 0;
+  width: 75%;
+}
+
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #22D056;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #82E362;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #22D056;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #9BFEA6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+span.psw, span.new {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+span.psw a, span.new a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+span.psw a:hover, span.new a:hover {
+    text-decoration: underline;
+}
+</style>
+<ul>
+  <li style="color:white;padding:14px 16px">Rolsa Technologies</li>
+  <li><a href="Home Page.html">Home</a></li>
+  <li class="dropdown">
+    <a href="#services" class="dropbtn">Services</a>
+    <div class="dropdown-content">
+      <a href="Solar Panel Page.html">Solar Panels</a>
+      <a href="EV Charging Station.html">EV Charging Station</a>
+      <a href="Home Energy Management System Page.html">Smart Home Management Systems</a>
+    </div>
+  </li>
+  <li class="dropdown">
+	<a href="#information" class="dropbtn">Information</a>
+	<div class="dropdown-content">
+	  <a href="Market Page.html">Visit Our Market</a>
+	  <a href="Carbon Footprint Info Page.html">How To Reduce Your Carbon Footprint</a>
+	</div>
+  </li>
+  <li><a href="Booking Page 1.html">Booking</a></li>
+  <li><a href="#Extras">Extras</a></li>
+  <li><a href="Contact Us Page.html">Contact Us</a></li>
+  <li style="float:right"><a href="Log in Page.html">Log In</a></li>
+</ul>
+<br>
+</head>
+<h1>Log in</h1>
+<form action="#" method="post">
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+  </div>
+
+  <div class="container" style="background-color:#72FD81">
+    <span class="psw">Forgot <a href="Forgot Password Page.html">password?</a></span>
+    <span class="new">New User? <a href="Create an account Page.html">Create an account</a></span>
+  </div>
+</form>
+
+</body>

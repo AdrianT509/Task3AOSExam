@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Rolsa Technologies</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 25px;
+            padding: 0px 100px;
+            overflow: hidden;
+            background-color: #DF7D7C;
+            background-image: linear-gradient(to right, #44BD48 , #A1E065);
+            position: fixed;
+            top: 0;
+            width: 75%;
+        }
+
+        footer {
+            background-color: #0C99C4;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            background-color: #22D056;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #82E362;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #22D056;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        table {
+            border-collapse: collapse;
+            background: white;
+            color: black;
+        }
+
+        th, td {
+            font-weight: bold;
+            border: 1px solid #777;
+        }
+
+        #Progress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #Bar {
+            width: 66%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border: 2px solid #777;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li style="color:white;padding:14px 16px">Rolsa Technologies</li>
+        <li><a href="Home Page.html">Home</a></li>
+        <li class="dropdown">
+            <a href="#services" class="dropbtn">Services</a>
+            <div class="dropdown-content">
+                <a href="Solar Panel Page.html">Solar Panels</a>
+                <a href="EV Charging Station.html">EV Charging Station</a>
+                <a href="Home Energy Management System Page.html">Smart Home Management Systems</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#information" class="dropbtn">Information</a>
+            <div class="dropdown-content">
+                <a href="Market Page.html">Visit Our Market</a>
+                <a href="Carbon Footprint Info Page.html">How To Reduce Your Carbon Footprint</a>
+            </div>
+        </li>
+        <li><a href="Booking Page 1.html">Booking</a></li>
+        <li><a href="#Extras">Extras</a></li>
+        <li><a href="Contact Us Page.html">Contact Us</a></li>
+        <li style="float:right"><a href="Log in Page.html">Log In</a></li>
+    </ul>
+
+    <br><br>
+    <h1>Book an Installation/Consultation</h1>
+    <br><br>
+    
+    <form method="POST" action="{{ url_for('submit_booking') }}">
+
+        <fieldset>
+            <legend>Fill out the details:</legend>
+
+            <label for="fname">First Name</label><br>
+            <input type="text" id="fname" name="fname" required><br><br>
+
+            <label for="lname">Last Name</label><br>
+            <input type="text" id="lname" name="lname" required><br><br>
+
+            <label for="email">Email Address</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{6}" required><br><br>
+
+            <label for="address">Postcode</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="time">Time of Booking (Between 10am-4pm)</label><br>
+            <input type="time" id="time" name="time" required><br><br>
+        </fieldset>
+        
+        <br><br>
+        <div id="Progress">
+            <div id="Bar">66%</div>
+        </div>
+        
+        <br><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>

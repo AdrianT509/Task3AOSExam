@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Rolsa Technologies</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 25px;
+            padding: 0px 100px;
+            overflow: hidden;
+            background-color: #DF7D7C;
+            background-image: linear-gradient(to right, #44BD48 , #A1E065);
+            position: fixed;
+            top: 0;
+            width: 75%;
+        }
+
+        li {
+            float: left;
+        }
+
+        footer {
+            background-color: #0C99C4;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            background-color: #22D056;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #82E362;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover { background-color: #22D056; }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        th {
+            background-color: #23D617;
+            color: black;
+        }
+
+        td {
+            background-color: #B1FFAC;
+        }
+
+        td.selected {
+            background-color: #85EB7E;
+            color: black;
+        }
+
+        td:hover {
+            background-color: #81FC78;
+        }
+
+        #Progress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #Bar {
+            width: 33%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border: 2px solid #777;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li style="color:white;padding:14px 16px">Rolsa Technologies</li>
+        <li><a href="Home Page.html">Home</a></li>
+        <li class="dropdown">
+            <a href="#services" class="dropbtn">Services</a>
+            <div class="dropdown-content">
+                <a href="Solar Panel Page.html">Solar Panels</a>
+                <a href="EV Charging Station.html">EV Charging Station</a>
+                <a href="Home Energy Management System Page.html">Smart Home Management Systems</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#information" class="dropbtn">Information</a>
+            <div class="dropdown-content">
+                <a href="Market Page.html">Visit Our Market</a>
+                <a href="Carbon Footprint Info Page.html">How To Reduce Your Carbon Footprint</a>
+            </div>
+        </li>
+        <li><a href="Booking Page 1.html">Booking</a></li>
+        <li><a href="#Extras">Extras</a></li>
+        <li><a href="Contact Us Page.html">Contact Us</a></li>
+        <li style="float:right"><a href="Log in Page.html">Log In</a></li>
+    </ul>
+	<br><br><br><br>
+    <h1>Book a Installation/Consultation</h1>
+    <hr>
+    <br><br>
+
+    <form method="POST" action="{{ url_for('book') }}">
+        <label for="booking_type">Select which type of booking you would like:</label>
+        <br><br>
+		<select id="booking_type" name="booking_type" required>
+			<option value="Installation">Installation</option>
+			<option value="Consultation">Consultation</option>
+		</select>
+        <br><br>
+
+        <label for="service_type">What type of service would you like?</label>
+        <br><br>
+        <select id="service_type" name="service_type" required>
+			<option value="Solar Panel">Solar Panel</option>
+			<option value="EV Charging Station">EV Charging Station</option>
+			<option value="Smart Home Energy Management">Smart Home Energy Management</option>
+		</select>
+        <br><br>
+
+        <label for="selected_date">Select the date of your booking</label>
+        <h2 align="center" style="color: black;">January 2025</h2>
+        
+        <!-- Calendar for Date Selection -->
+        <table id="calendar">
+            <caption align="top"></caption>
+            <thead>
+                <tr>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td onclick="selectDate(1)">1</td>
+                    <td onclick="selectDate(2)">2</td>
+                    <td onclick="selectDate(3)">3</td>
+                    <td onclick="selectDate(4)">4</td>
+                    <td onclick="selectDate(5)">5</td>
+                    <td onclick="selectDate(6)">6</td>
+                    <td onclick="selectDate(7)">7</td>
+                </tr>
+                <tr>
+                    <td onclick="selectDate(8)">8</td>
+                    <td onclick="selectDate(9)">9</td>
+                    <td onclick="selectDate(10)">10</td>
+                    <td onclick="selectDate(11)">11</td>
+                    <td onclick="selectDate(12)">12</td>
+                    <td onclick="selectDate(13)">13</td>
+                    <td onclick="selectDate(14)">14</td>
+                </tr>
+                <tr>
+                    <td onclick="selectDate(15)">15</td>
+                    <td onclick="selectDate(16)">16</td>
+                    <td onclick="selectDate(17)">17</td>
+                    <td onclick="selectDate(18)">18</td>
+                    <td onclick="selectDate(19)">19</td>
+                    <td onclick="selectDate(20)">20</td>
+                    <td onclick="selectDate(21)">21</td>
+                </tr>
+                <tr>
+                    <td onclick="selectDate(22)">22</td>
+                    <td onclick="selectDate(23)">23</td>
+                    <td onclick="selectDate(24)">24</td>
+                    <td onclick="selectDate(25)">25</td>
+                    <td onclick="selectDate(26)">26</td>
+                    <td onclick="selectDate(27)">27</td>
+                    <td onclick="selectDate(28)">28</td>
+                </tr>
+                <tr>
+                    <td onclick="selectDate(29)">29</td>
+                    <td onclick="selectDate(30)">30</td>
+                    <td onclick="selectDate(31)">31</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div id="selectedDate">Selected Date: None</div>
+
+        <script>
+            // Function to select a date
+            function selectDate(day) {
+			
+				// Define the month and year
+				const month = "January";
+				const year = 2025;
+				
+				// Format date as DD-MM-YYYY
+				const formattedDate = formatDate(day, month, year);
+				
+                // Remove 'selected' class from all td elements
+                const allDays = document.querySelectorAll("td");
+                allDays.forEach(function(td) {
+                    td.classList.remove("selected");
+                });
+
+                // Loop through all td elements and find the one with the clicked day
+                const selectedTd = Array.from(allDays).find(td => td.textContent == day);
+
+                if (selectedTd) {
+                    selectedTd.classList.add("selected");
+                    // Show the selected date
+                    document.getElementById("selectedDate").innerText = `Selected Date: ${formattedDate}`;
+                    document.getElementById("selectedDataInput").value = formattedDate;
+                }
+
+                // Save the formatted date in local storage
+                localStorage.setItem('selectedDate', day);
+            }
+			
+			// Formatting the date into desired format: DD-MM-YYYY
+			function formatDate(day, month, year) {
+				const monthAbbreviation = month.substring(0, 3); // Get the first 3 letters of the month name
+				return `${day.toString().padStart(2, '0')}-${monthAbbreviation}-${year}`;
+			}
+
+            // Load saved date (if any)
+            window.onload = function() {
+                const savedDate = localStorage.getItem('selectedDate');
+                if (savedDate) {
+				//split saved data into day, month and year for reformatting
+				 const [day, month, year] = savedDate.split('-');
+                // Display the saved date in the selected format
+				document.getElementById("selectedDate").innerText = `Selected Date: ${savedDate}`;
+				document.getElementById("selectedDataInput").value = savedDate;
+                }
+            }
+        </script>
+
+        <br><br>
+        <hr>
+        <br><br><br>
+        <div id="Progress">
+            <div id="Bar">33%</div>
+        </div>
+        <br><br><br>
+
+        <input type="hidden" id="selected_date" name="selected_date">
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
